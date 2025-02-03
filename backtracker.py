@@ -1,5 +1,4 @@
-from structures import Variable, Literal, Clause, Circuit, SATStatus
-
+from structures import Variable, Circuit, SATStatus
 
 def solve(variables: list[Variable], circuit: Circuit) -> SATStatus:
     evaluation = circuit.evaluate()
