@@ -12,6 +12,9 @@ class SATStatus(Enum):
     SATISFIED = 2
     UNSATISFIABLE = 3
 
+NEGATIVE_LITERAL = lambda variable: Literal(False, variable)
+POSITVE_LITERAL = lambda variable: Literal(True, variable)
+
 @dataclass
 class Literal:
     sign: bool
