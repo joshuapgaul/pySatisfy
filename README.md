@@ -1,2 +1,2 @@
 # pySatisfy
-Boolean Satisfiability Solver
+Toy Boolean Satisfiability Solver
