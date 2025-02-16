@@ -1,5 +1,5 @@
 
-from structures import Variable, Literal, NEGATIVE_LITERAL, POSITVE_LITERAL, Clause, Circuit, SATStatus
+from structures import Variable, Literal, NEGATIVE_LITERAL, POSITIVE_LITERAL, Clause, Circuit, SATStatus
 
 ##3 X 3 X 3 Sudoku (standard)
 

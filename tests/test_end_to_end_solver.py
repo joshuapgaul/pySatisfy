@@ -1,5 +1,5 @@
 from backtracker import solve
-from structures import Variable, Literal, NEGATIVE_LITERAL, POSITVE_LITERAL, Clause, Circuit, SATStatus
+from structures import Variable, Literal, NEGATIVE_LITERAL, POSITIVE_LITERAL, Clause, Circuit, SATStatus
 
 def test_one_positive_literal_one_clause_circuit():
     variable = Variable(1)
@@ -34,7 +34,7 @@ def test_simple_two_clause_satisifiable():
     v1 = Variable(1)
     v2 = Variable(2)
 
-    circuit = Circuit( [Clause([NEGATIVE_LITERAL(v1)]), Clause([POSITVE_LITERAL(v1), POSITVE_LITERAL(v2)])])
+    circuit = Circuit( [Clause([NEGATIVE_LITERAL(v1)]), Clause([POSITIVE_LITERAL(v1), POSITIVE_LITERAL(v2)])])
     evaluation = solve([v1, v2], circuit)
     assert evaluation == SATStatus.SATISFIED
 
