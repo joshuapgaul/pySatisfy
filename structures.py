@@ -13,7 +13,7 @@ class SATStatus(Enum):
     UNSATISFIABLE = 3
 
 NEGATIVE_LITERAL = lambda variable: Literal(False, variable)
-POSITVE_LITERAL = lambda variable: Literal(True, variable)
+POSITIVE_LITERAL = lambda variable: Literal(True, variable)
 
 @dataclass
 class Literal:
@@ -65,3 +65,18 @@ class Circuit:
                     variable_names.add(literal.variable.name)
         
         return variables
+    
+
+def one_hot_encoding(variables: list[Variable]) -> list[Clause]:
+    if len(variables ) < 1:
+        raise ValueError('There must be at least one variable for a one hot encoding!')
+
+    AT_LEAST_ONE_CLAUSE = Clause([ POSITIVE_LITERAL(variable) for variable in variables])
+    clauses = [AT_LEAST_ONE_CLAUSE]
+
+    ## No more than one clauses
+    for x in range(len(variables)):
+        for y in range(x + 1, len(variables)):
+            clauses.append( Clause([ NEGATIVE_LITERAL(variables[x]), NEGATIVE_LITERAL(variables[y]) ]))
+    
+    return clauses
