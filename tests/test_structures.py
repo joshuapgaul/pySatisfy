@@ -35,7 +35,7 @@ def test_one_hot_encoder():
         ( [True, False, None], SATStatus.POSSIBLE )
     ]
 
-    for assignemnts, outcome in cases:
-        v1.assignment, v2.assignment, v3.assignment = assignemnts[0], assignemnts[1], assignemnts[2]
+    for assignments, outcome in cases:
+        v1.assignment, v2.assignment, v3.assignment = assignments[0], assignments[1], assignments[2]
         assert circuit.evaluate() == outcome
         v1.assignment, v2.assignment, v3.assignment == None
